@@ -2,7 +2,7 @@ use clap::{Parser, Subcommand};
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
-struct CLI {
+struct Cli {
     #[command(subcommand)]
     command: Commands,
 }
@@ -12,19 +12,29 @@ enum Commands {
     CalculateTotalBalance {
         initial_deposit: f64,
         monthly_recurring_deposit: f64,
-        annual_growth_rate: f64, 
-        compounding_frequency: i32, 
-        time_period: i32
-    }
+        annual_growth_rate: f64,
+        compounding_frequency: i32,
+        time_period: i32,
+    },
 }
 
 fn main() {
-    let args = CLI::parse();
+    let args = Cli::parse();
 
     match args.command {
-        Commands::CalculateTotalBalance {initial_deposit, monthly_recurring_deposit, annual_growth_rate, compounding_frequency, time_period} => {
+        Commands::CalculateTotalBalance {
+            initial_deposit,
+            monthly_recurring_deposit,
+            annual_growth_rate,
+            compounding_frequency,
+            time_period,
+        } => {
             let total_balance = peter_min_data_engineering_project7::calculate_total_balance(
-                initial_deposit, monthly_recurring_deposit, annual_growth_rate, compounding_frequency, time_period
+                initial_deposit,
+                monthly_recurring_deposit,
+                annual_growth_rate,
+                compounding_frequency,
+                time_period,
             );
             let display_growth_rate = annual_growth_rate * 100.0;
             println!();

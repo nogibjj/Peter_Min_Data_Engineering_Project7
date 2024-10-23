@@ -14,6 +14,7 @@ cargo --version
 ```
 
 Navigate to this project folder and run this command:
+
 `cargo run -- calculate-total-balance <initial_deposit_amount> <monthly_contribution> <estimated_annual_growth_rate> <compounding_frequency> <number_of_years_to_accumulate>`
 
 The output will be like this:
