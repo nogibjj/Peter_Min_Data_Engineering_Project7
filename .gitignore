@@ -2,3 +2,7 @@
 __pycache__
 venv
 .coverage
+
+# Added by cargo
+
+/target
