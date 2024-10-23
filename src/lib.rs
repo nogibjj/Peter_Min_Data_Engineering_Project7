@@ -17,9 +17,7 @@ pub fn calculate_balance_from_recurring_deposit(
 ) -> f64 {
     let base = 1_f64 + annual_growth_rate / compounding_frequency as f64;
     let power = compounding_frequency * time_period;
-    12_f64 / compounding_frequency as f64
-        * monthly_recurring_deposit
-        * (base.powi(power) - 1_f64)
+    12_f64 / compounding_frequency as f64 * monthly_recurring_deposit * (base.powi(power) - 1_f64)
         / annual_growth_rate
         / compounding_frequency as f64
 }

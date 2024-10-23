@@ -1,5 +1,5 @@
 format:
-	cargo format
+	cargo fmt
 
 check:
 	cargo check
