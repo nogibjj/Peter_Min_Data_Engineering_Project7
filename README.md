@@ -1,5 +1,5 @@
 # Mini_Project_7
-
+[![CI/CD Pipeline](https://github.com/nogibjj/Peter_Min_Data_Engineering_Project7/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Peter_Min_Data_Engineering_Project7/actions/workflows/cicd.yml)
 
 This is the README for my Mini Project 7 for the IDS706 - Data Engineering Systems class at Duke University.
 
@@ -8,16 +8,23 @@ The purpose of this project is to translate my learning in Rust so far to a CLI 
 
 ## Usage
 To use the tool, first ensure you have Rust and Cargo installed:
+
 ```
 rustc --version
 cargo --version
 ```
 
-Navigate to this project folder and run this command:
+Then navigate to this project folder and run the calculator in 1 of 2 ways:
 
 `cargo run -- calculate-total-balance <initial_deposit_amount> <monthly_contribution> <estimated_annual_growth_rate> <compounding_frequency> <number_of_years_to_accumulate>`
 
-The output will be like this:
+or
+```
+cargo build
+./target/release/<package_name> calculate-total-balance <initial_deposit_amount> <monthly_contribution> <estimated_annual_growth_rate> <compounding_frequency> <number_of_years_to_accumulate>
+```
+
+Assuming initial_deposit_amount = 5000, monthly_contribution = 200, estimated_annual_growth_rate = 0.1, compounding_frequency = 1, number_of_years_to_accumulate = 40, the output will be like this:
 > Your total balance after 40 years with a initial deposit of $5000 and a monthly contribution of $200 under a annual growth rate of 10% with compounding frequency of 1 is $1288518.41.
 
 ## Note
